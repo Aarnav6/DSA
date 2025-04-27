@@ -3,13 +3,12 @@ public class PrintStringReverse {
     private String reversedString;
     private final String stringEnteredByUser;
     int index;
+    private final Scanner scanner = new Scanner(System.in);
     PrintStringReverse () {
         System.out.print("Enter a string to reverse: ");
-        Scanner scanner = new Scanner(System.in);
         this.stringEnteredByUser = scanner.nextLine();
         index = stringEnteredByUser.length()-1;
         reversedString = ""; 
-        scanner.close();
     }
     public void reverseStr() {
         if(index < 0) {
@@ -22,10 +21,10 @@ public class PrintStringReverse {
     }
     public void check() {
         if(reversedString.equalsIgnoreCase(stringEnteredByUser))
-            System.out.println("Also your string is palindrome");
+        System.out.println("Also your string is palindrome");
         else
-            System.out.println("But your string is not palindrome");
-
+        System.out.println("But your string is not palindrome");
+        
     }
     public static void main(String[] args) {
         PrintStringReverse call = new PrintStringReverse();
