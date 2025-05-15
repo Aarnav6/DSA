@@ -40,12 +40,21 @@ public class CheckStrictlyIncreasingArray {
         if(index >= inputArray.length-1) { //base case
             return true;
         }
+        /* 
+        // optimizing the code given bellow by changing condition to false and return false on false cases 
+        // meanwhile doing nothing on true cases just calling a function with increased index
+        
         if(inputArray[index] < inputArray[index+1]) { // checking condition
             return isStrictlyIncreasing(index + 1);
         }
         else {
             return false;
         }
+        */
+        if(inputArray[index] >= inputArray[index+1]) { // optimized code
+            return false;
+        }
+        return isStrictlyIncreasing(index + 1);
     }
     public static void main(String[] args) {
         CheckStrictlyIncreasingArray call = new CheckStrictlyIncreasingArray();
