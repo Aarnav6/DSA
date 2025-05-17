@@ -1,4 +1,26 @@
 public class InsertionSort {
+    public static void sort(int[] arr) {
+        for(int i=1 ; i<arr.length ; i++) { // in insertion sort we consider that i=0 is already sorted , also to prevent from ArrayIndexOutOfBound so start from i=1
+            int j = i-1;
+            int current  = arr[i];
+            while(j >=0  && current < arr[j]) { // shifting element till we get to correct position
+                arr[j+1] = arr[j];
+                j--; // since after the last shifting were having j-- so the index is subtracted 1 extra time so we place current element in the j+1 position
+            }
+            arr[j+1] = current; // placement of element in correct position
+        }
+    }
+    public static void main(String[] args) {
+        int[] InputArray = {0 , 4 , 1  , 5 , 2 , 6 , 3 , 7};
+        sort(InputArray);
+        for(int i : InputArray) {
+            System.out.print(i+" ");
+        }
+    }
+}
+
+/* older codes
+public class InsertionSort {
     public static int idx;
     public static int comparingVal;
     public static int[] sortArr(int[] arr , byte runConfig) {
@@ -50,7 +72,7 @@ public class InsertionSort {
         printArr(res2);
     }
 }
-
+*/
 /*
 // in this code the only diffrence is that it checks if the shifiting was done 
 // if yes then it allows the putting of value if not then it dosent 
